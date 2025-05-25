@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: murali-flower-app-deployment
+  name: somia-flower-app-deployment
   labels:
     app: example
 spec: # Defines the Deployment Behaviour
   replicas: 3
   selector:
     matchLabels:
-      app: murali
+      app: somia
   template:
     metadata:
       labels:
-        app: murali
+        app: somia
     spec: # Define the Pod behaviour
       containers:
       - name: cart-app
@@ -31,10 +31,10 @@ spec: # Defines the Deployment Behaviour
 apiVersion: v1
 kind: Service
 metadata:
-  name: murali-flower-app-svc
+  name: somia-flower-app-svc
 spec:
   selector:
-    app: murali
+    app: somia
   ports:
   - port: 3016
     targetPort: 3015 
